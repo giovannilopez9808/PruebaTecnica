@@ -1,4 +1,11 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
 \section*{Sección 2}
+Identificaría las claves únicas de las bases de datos. Estas pueden ser la información de la fecha y hora. Además de una clave única de usuarios que podría ser una clave interna del banco. A cada tabla individualmente le añadiría una columna extra llamada movimiento que guardará el tipo de movimiento que es el que está registrado. Con estas claves identificadas  y las columnas creadas, uniría las tablas realizando un full join, ya que no son dos grupos excluyentes debido a la naturaleza de los datos y para tener un orden las ordenaría de forma cronológica. La validación de la unión lo haria observando el número de datos que cuenta la unión de la tabla ya que deberian ser la suma de los registros de cada tabla de manera individual.
+\begin{verbatim}
+    SELECT *
+    FROM credit.table AS credit
+    FULL OUTER JOIN sell.table AS sell
+    ON credit Val = sell Val;
+\end{verbatim}
 \end{document}
